@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+       
+        <title></title>
+        
+        <style>
+
+            /* .slides{
+
+                background-color: red;
+               
+                display: flex;
+              aspect-ratio: 9/9;
+               overflow-x: auto;
+               scroll-snap-type: x mandatory;
+               scroll-behavior: smooth;
+
+            }
+
+       .img{
+        flex: 1 0 100%;
+        scroll-snap-align: start;
+        
+        background-color: aqua;
+        
+        text-align: center;
+        aspect-ratio: 16/9;
+        margin: 5px;
+       } */
+
+       .slider{
+
+        display: relative;
+        width: 100%;
+        
+        background-color: red;
+       }
+
+       .nav{
+
+       
+        position: absolute;
+        top: 20%;
+        left: 0%;
+        transform: translateY(-50%);
+        width: 100%;
+        
+      
+       }
+
+       .next{
+
+        float: right;
+        margin-right: 20px;
+        
+
+
+
+
+       }
+
+       .prev{
+
+        margin-left: 50px;
+
+
+
+       }
+
+       .slides{
+
+        display: flex;
+        position: relative;
+       
+        overflow-x: hidden;
+        transition: transform 0.5s;
+        scroll-behavior: smooth;
+
+
+
+       }
+
+       .slides .img{
+
+
+        width: 100%;
+        flex: 1 0 100%; 
+        /* change % value here to two cards slider and change ci value to work that one correctly */
+        background-color: burlywood;
+        margin: 5px;
+        
+        position: relative;
+        transition: transform 0.5s;
+        text-align: center;
+        object-fit: cover;
+     
+        height: 200px;
+
+
+       }
+      
+
+
+
+
+
+        </style>
+
+    </head>
+    <body>
+        
+        <div class="slider">
+
+            <div class="slides">
+
+            <div class="img">img 1</div>
+            <div class="img">img 2</div>
+            <div class="img">img 3</div>
+
+            </div>
+
+            <div class="nav">
+
+           <button class="prev" onclick="pi()">prev</button>
+           <button class="next" onclick="ni()">next</button> 
+        
+           </div>
+
+
+        </div>
+
+        <script>
+
+            const slider = document.querySelector(".slides");
+            const images = document.querySelectorAll(".img");
+            const b = document.querySelector(".next");
+            const c = document.querySelector(".prev");
+
+            let ci = 0;
+
+            slider.addEventListener('touchstart', (e)=> {
+                e.preventDefault();
+
+              const sx = e.clientX;
+              
+
+              slider.addEventListener('touchmove', (e)=> {
+                  
+                const nx = e.clientX;
+
+                const diff = sx - nx;
+                if(diff > 70){
+                     ni();
+                    
+                }else if (diff < 70){
+
+                    pi();
+                }
+
+              });
+
+            });
+
+ let s = 0;
+
+            function ni() 
+            {
+            
+                
+            ci++;
+
+            if(ci >= 3){ci = 0;}
+            
+            const t = images[0].offsetWidth;
+            
+            slider.scrollLeft = ci*images[0].offsetWidth;
+
+            b.addEventListener('mouseover',()=>{s = 1;});
+
+            }
+
+            function pi() 
+            {
+            
+            ci--;
+
+            if(ci < 0){ci = 2;}
+            
+            const t = images[0].offsetWidth;
+            
+            slider.scrollLeft = (ci*images[0].offsetWidth); 
+
+           
+            }
+
+           // setInterval(ni,2000);
+           let t=0;
+ let p=0;
+
+                slider.addEventListener('mouseover',()=>{p = 1;});
+                slider.addEventListener('mouseout',()=>{p = 0;});
+                b.addEventListener('mouseout',()=>{s=0;});
+                 c.addEventListener('mouseout',()=>{s=0;});
+                 c.addEventListener('mouseover',()=>{s = 1;});
+
+           function el(){
+
+           
+                    
+                   if(p == 1 || s == 1)
+                   return 1;
+                else return 0;
+
+
+           }
+
+
+           setInterval(()=>{
+              //  alert();  
+            t=el();
+            
+
+            if(t==0){ni();}
+           
+
+               
+
+
+
+           },2000);
+
+        </script>
+        
+        
+    </body>
+</html>

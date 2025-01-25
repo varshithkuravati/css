@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+    
+<html>
+    <head>
+        <meta charset="utf-8">
+       
+        <title>css testing</title>
+        
+        <style>
+/*  display 
+          .container{
+
+            display: block;
+            background-color: white;
+            width: 80%;
+            margin: auto;
+          }
+
+          .item{
+
+            background-color: aqua;
+            margin: 2px;
+            display: inline-block;
+            padding: 10px;
+
+
+
+          } */
+
+           /* flex box
+            .container{
+
+            display: flex;
+         background-color: red; 
+           
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+
+
+          }
+
+
+          .item{
+
+            background-color: aqua;
+            margin: 2px;
+            display: inline-block;
+            padding: 10px;
+
+
+
+          } */
+
+.container{
+
+display: grid;
+grid-template-columns: 1fr 3fr;
+/* background-color: red;  */
+grid-gap: 2px;
+height: 1000px;
+
+
+
+}
+
+
+.item{
+
+/* background-color: aqua; */
+margin: 2px;
+padding: 50px;
+
+
+
+
+} 
+
+/* flex box model
+
+.con1{
+ background-color: red; 
+display: flex;
+justify-content: center;
+
+}
+
+.item1{
+
+ background-color: aqua; 
+margin: 2px;
+
+text-align: center;
+margin: auto;
+width: 350px;
+
+
+}  */
+
+
+.con1{
+ /* background-color: red;  */
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(420px, 1fr));
+grid-gap: 5px;
+padding: 10px;
+
+
+
+}
+
+.item1{
+
+ background-color: white; 
+
+box-shadow: 2px 4px 20px 0px rgb(0, 0, 0,0.1),-2px -4px 20px 0px rgb(0, 0, 0,0.1);
+text-align: center;
+padding: 20px;
+margin: auto;
+width: 350px;
+height: 500px;
+
+
+} 
+
+.nav{
+
+    background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+    height: 100%;
+    width: 0%;
+  /* display: none; */
+   transition: width 2s;
+   overflow: hidden;
+   color: white;
+
+}
+
+.nb{
+
+    display: none;
+}
+
+
+
+
+.body{
+
+    display: block;
+    position: relative;
+    height: 100%;
+}
+
+.op{
+
+    display: block;
+    background-color: greenyellow;
+    padding: 5px;
+    min-width: 100%;
+}
+
+
+@media (max-width: 1330px) {
+
+    .item1{
+
+      background-color: aqua;
+    }
+
+    #it1{
+
+        display: none;
+    }
+
+    .container{
+
+display: grid;
+grid-template-columns: 1fr;
+/* background-color: red;  */
+/* grid-gap: 2px; */
+height: 1000px;
+
+
+
+}
+
+/* .con1{
+
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(600px, 1fr));
+grid-gap: 5px;
+padding: 10px;
+
+
+
+} */
+
+.nb{
+
+display: block;
+}
+
+
+
+
+    
+}
+ 
+
+
+        </style>
+        
+    </head>
+    <body>
+
+     <div class="body">
+        <button onclick="cli()" class="nb">menu</button>
+
+        <div class="nav" id="nav">
+
+           <div class="op">@ Home</div>
+
+
+
+
+
+        </div>
+
+        <div class="container">
+
+            <div class="item" id="it1">
+
+                <h1>this is for testing</h1>
+
+
+            </div>
+
+            <div class="item">
+
+                <h1>this is for testing</h1>
+
+            <div class="con1">
+
+                <div class="item1" >
+
+                    <p>card one</p>
+
+
+                </div>
+
+                <div class="item1">
+
+                    <p>card two</p>
+
+
+                </div>
+
+
+            </div> 
+
+
+
+            </div>
+
+
+
+            
+          
+
+
+        </div>
+
+
+
+       </div>
+
+
+
+
+       <script>
+
+
+function cli(){
+  
+    document.getElementById("nav").style.width="50%";
+}
+       </script>
+
+
+    </body>
+</html>

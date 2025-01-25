@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> linear gradient</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+        <style>
+
+              .box{
+
+                width: 200px;
+                height: 200px;
+                margin: auto;
+                
+               
+                transition-property: box-shadow;
+                transition-duration: .5s;
+                transition-timing-function: ease-out;
+                /* background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 33.333%, rgba(97, 84, 199, 1) 66.666%, rgba(255, 255, 255, 0) 99.999%); */
+                box-shadow: inset 0px -40px 60px rgba(3, 3, 4, 0.3);
+
+              }
+
+             
+              .box:hover{
+
+/* background-image: linear-gradient(to top,rgba(0,0,150,.5) ,rgba(0,0,0,0) ); */
+box-shadow: inset 0px -40px 60px rgba(99, 99, 244, 0.3);
+
+}
+
+
+        </style>
+    </head>
+    <body>
+    
+      <div class="box"></div>  
+      
+    </body>
+</html>
